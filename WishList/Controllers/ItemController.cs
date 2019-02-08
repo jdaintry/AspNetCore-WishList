@@ -15,8 +15,12 @@ namespace WishList.Controllers
         {
           _context = context;
         }
-         
 
+        public IActionResult Index()
+        {
+            var model = _context.Items.ToList();
+            return View("Index", model);
+        }
 
 
     }
